@@ -1,3 +1,4 @@
+import "./style.css";
 const form = document.querySelector("form");
 
 // Same pattern as 'clicks', but for 'submit' events.
@@ -9,3 +10,13 @@ form.addEventListener("submit", (event) => {
 
   console.log(data);
 });
+function Results(data) {
+  console.log(Object.entries(data));
+
+  return `<ul class="space-y-1 text-sm">
+        ${Object.entries(data)
+          .map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`)
+          .join("")}
+    </ul>   
+    `;
+}
